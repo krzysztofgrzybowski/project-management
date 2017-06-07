@@ -1,25 +1,28 @@
-<div class="auth-dialog">
-  <h4 class="text-center">Project Management Application</h4>
+<div class="auth-dialog text-center">
   <div *ngIf="mode == 'login'">
     <div class="authentication-form">
-      <h5 class="text-center">Log in</h5>
-      <input class="form-control pm-form-control" />
-      <input class="form-control pm-form-control" />
+      <h3 class="auth-dialog-header">Log in</h3>
+      <input class="form-control pm-form-control" placeholder="&#xf0e0;&#9;EMAIL" style="font-family:Arial, FontAwesome" />
+      <input class="form-control pm-form-control" placeholder="&#xf084;&#9;PASSWORD" style="font-family:Arial, FontAwesome" />
+      <div class="text-right">
+        <a href="#" class="btn btn-primary pm-default-btn">
+          LOG IN
+        </a>
+      </div>
     </div>
-    <p class="text-center">
+    <p>
       You don't have account yet? <a (click)="mode='register'" href="#">REGISTER</a>
     </p>
   </div>
-  <div  *ngIf="mode == 'register'">
+  <div *ngIf="mode == 'register'">
     <div class="authentication-form">
-      <h5 class="text-center">Register</h5>
+      <h3 class="auth-dialog-header">Register</h3>
       <input class="form-control pm-form-control" />
       <input class="form-control pm-form-control" />
       <input class="form-control pm-form-control" />
     </div>
-    <p class="text-center">
+    <p>
       You already have account? <a (click)="mode='login'" href="#">LOG IN</a>
     </p>
   </div>
-
 </div>

@@ -7,12 +7,8 @@
     </p>
   </div>
   <div *ngIf="mode == 'register'">
-    <div class="authentication-form">
-      <h3 class="auth-dialog-header">Register</h3>
-      <input class="form-control pm-form-control" />
-      <input class="form-control pm-form-control" />
-      <input class="form-control pm-form-control" />
-    </div>
+    <h3 class="auth-dialog-header">Register</h3>
+    <app-register></app-register>
     <p>
       You already have account? <a (click)="mode='login'" href="#">LOG IN</a>
     </p>

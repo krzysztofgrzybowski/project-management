@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Angular2TokenService } from 'angular2-token';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -16,27 +15,26 @@ export class LogInComponent implements OnInit {
   errorMsgArray: string[];
 
   constructor(
-    private tokenService: Angular2TokenService,
-    private router: Router
+    private tokenService: Angular2TokenService
   ) { }
 
   ngOnInit() {
   }
 
   onLogInSubmit() {
-      this.tokenService.signIn(this.logInUser).subscribe(
-        () => {
-          this.hasErrors = false;
-        },
-        (response) => {
-          this.hasErrors = true;
-          this.errorMsgArray = response.json()['errors']
-          this.logInUser = {
-            email: '',
-            password: ''
-          };
-        }
-      );
-    }
-
+    this.tokenService.signIn(this.logInUser).subscribe(
+      res => {
+        this.hasErrors = false;
+        this.logInUser = {
+          email: '',
+          password: ''
+        };
+      },
+      error => {
+        this.hasErrors = true;
+        this.errorMsgArray = error.json()['errors']
+        this.logInUser.password = '';
+      }
+    );
+  }
 }

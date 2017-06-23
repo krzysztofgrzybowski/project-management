@@ -11,6 +11,7 @@ import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthComponent } from './auth/auth.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthComponent } from './auth/auth.component';
     AuthDialogComponent,
     DashboardComponent,
     LogInComponent,
-    AuthComponent
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

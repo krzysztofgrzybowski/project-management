@@ -1,0 +1,33 @@
+<div class="authentication-form">
+  <div class="alert pm-alert pm-alert-danger" [hidden]="!hasErrors">
+    <p *ngFor="let error of errorMsgArray">{{error}}</p>
+  </div>
+  <form (ngSubmit)="onLogInSubmit()" #f="ngForm">
+    <div class="form-group">
+      <input class="form-control pm-form-control"
+             placeholder="&#xf0e0;&#9;EMAIL"
+             style="font-family:Arial, FontAwesome"
+             id="email"
+             type="email"
+             required
+             name='email'
+             [(ngModel)]="logInUser.email" />
+    </div>
+    <div class="form-group">
+      <input class="form-control pm-form-control"
+             placeholder="&#xf084;&#9;PASSWORD"
+             style="font-family:Arial, FontAwesome"
+             id="password"
+             type="password"
+             required
+             name='password'
+             [(ngModel)]="logInUser.password" />
+    </div>
+    <div class="form-group text-right">
+      <button class="btn pm-success-btn"
+              type="submit">
+        LOG IN
+      </button>
+    </div>
+  </form>
+</div>

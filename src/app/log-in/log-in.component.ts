@@ -27,7 +27,6 @@ export class LogInComponent implements OnInit {
       this.tokenService.signIn(this.logInUser).subscribe(
         () => {
           this.hasErrors = false;
-          this.router.navigate(['/dashboard'])
         },
         (response) => {
           this.hasErrors = true;

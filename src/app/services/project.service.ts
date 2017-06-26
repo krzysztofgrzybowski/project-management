@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 export interface Project {
   id?: number;
-  title?: string;
+  name?: string;
 }
 
 @Injectable()
@@ -15,6 +15,10 @@ export class ProjectService {
 
   getProjects() {
     return this.tokenService.get('projects').map(res => res.json());
+  }
+
+  createProject(project) {
+    return this.tokenService.post('projects', project).map(res => res.json());
   }
 
 }

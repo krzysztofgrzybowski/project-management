@@ -1,0 +1,6 @@
+<div *ngIf="tokenService.userSignedIn()">
+  <app-dashboard></app-dashboard>
+</div>
+<div *ngIf="!tokenService.userSignedIn()">
+  <app-auth></app-auth>
+</div>

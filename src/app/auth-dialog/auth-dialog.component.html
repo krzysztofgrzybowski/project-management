@@ -1,0 +1,16 @@
+<div class="auth-dialog text-center">
+  <div *ngIf="mode == 'login'">
+    <h3 class="auth-dialog-header">Log in</h3>
+    <app-log-in></app-log-in>
+    <p>
+      You don't have account yet? <a (click)="mode='register'" href="#">REGISTER</a>
+    </p>
+  </div>
+  <div *ngIf="mode == 'register'">
+    <h3 class="auth-dialog-header">Register</h3>
+    <app-register></app-register>
+    <p>
+      You already have account? <a (click)="mode='login'" href="#">LOG IN</a>
+    </p>
+  </div>
+</div>

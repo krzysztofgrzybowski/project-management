@@ -12,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
+import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
+import { ProjectService } from './services/project.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { RegisterComponent } from './register/register.component';
     DashboardComponent,
     LogInComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProjectsListComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule
   ],
   providers: [
-    Angular2TokenService
+    Angular2TokenService,
+    ProjectService
   ],
   bootstrap: [
     AppComponent

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="pm-block blue">
+      <div class="pm-block-header">Your projects</div>
+      <div class="pm-block-content">
+        <div *ngFor="let project of projectsList">
+          {{ project.name }}
+        </div>
+      </div>
+      <div class="pm-block-footer text-right">
+        <a href="#" class="btn btn-sm pm-success-btn">
+          New project
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="pm-block blue">
+      <div class="pm-block-header">Projects assigned to you</div>
+      <div class="pm-block-content">
+        There is some content. It should be displeayed under title inside pm-block element.
+      </div>
+    </div>
+  </div>
+</div>

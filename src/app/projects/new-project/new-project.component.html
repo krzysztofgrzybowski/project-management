@@ -7,7 +7,11 @@
         </div>
         <div class="pm-block-content">
           <div class="alert pm-alert pm-alert-danger" [hidden]="!hasErrors">
-            <p *ngFor="let error of errorMsgArray">{{error}}</p>
+            <span *ngFor="let field of errorMsgArray | keys">
+              <p *ngFor="let message of field.value">
+                {{field.key}} {{message}}
+              </p>
+            </span>
           </div>
           <div class="form-group">
             <input class="form-control pm-form-control"

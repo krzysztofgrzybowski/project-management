@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project, ProjectService } from '../../services/project.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-project',
@@ -14,7 +15,10 @@ export class NewProjectComponent implements OnInit {
   hasErrors: boolean;
   errorMsgArray: string[];
 
-  constructor(private _projectService: ProjectService) {
+  constructor(
+    private _projectService: ProjectService,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -23,11 +27,11 @@ export class NewProjectComponent implements OnInit {
   onCreateSubmit() {
     this._projectService.createProject(this.newProject).subscribe(
       res => {
-
+        this.router.navigate(['/projects']);
       },
       error => {
         this.hasErrors = true;
-        this.errorMsgArray = error.json()['errors'];
+        this.errorMsgArray = error.json()["errors"];
         console.log(this.errorMsgArray);
       }
     );

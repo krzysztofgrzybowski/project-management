@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProjectComponent implements OnInit {
 
-  constructor() { }
+  private editProject: Project;
+  hasErrors: boolean;
+  errorMsgArray: string[];
+
+  constructor(
+    private _projectService: ProjectService,
+    private router: Router
+  ) {
+  }
 
   ngOnInit() {
+  }
+
+  onUpdateSubmit() {
+    this._projectService.updateProject(this.editProject).subscribe(
+      res => {
+        this.router.navigate(['/projects']);
+      },
+      error => {
+        this.hasErrors = true;
+        this.errorMsgArray = error.json()["errors"];
+        console.log(this.errorMsgArray);
+      }
+    );
   }
 
 }

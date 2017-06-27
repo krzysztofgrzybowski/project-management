@@ -17,8 +17,16 @@ export class ProjectService {
     return this.tokenService.get('projects').map(res => res.json());
   }
 
+  getProject(projectId: Number) {
+    return this.tokenService.get('projects/'+projectId).map(res => res.json());
+  }
+
   createProject(project) {
     return this.tokenService.post('projects', project).map(res => res.json());
+  }
+
+  updateProject(project) {
+    return this.tokenService.patch('projects/'+project.id, project).map(res => res.json());
   }
 
 }

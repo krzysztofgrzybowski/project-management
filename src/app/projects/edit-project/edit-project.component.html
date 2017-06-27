@@ -1,3 +1,39 @@
-<p>
-  edit-project works!
-</p>
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="pm-block blue">
+      <form (ngSubmit)="onCreateSubmit()" #f="ngForm">
+        <div class="pm-block-header">
+          Create new project
+        </div>
+        <div class="pm-block-content">
+          <div class="alert pm-alert pm-alert-danger" [hidden]="!hasErrors">
+            <span *ngFor="let field of errorMsgArray | keys">
+              <p *ngFor="let message of field.value">
+                {{field.key}} {{message}}
+              </p>
+            </span>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label text-right">Name</label>
+            <div class="col-sm-9">
+              <input class="form-control pm-form-control"
+                     id="name"
+                     type="name"
+                     required
+                     name='name'
+                     [(ngModel)]="newProject.name" />
+            </div>
+          </div>
+        </div>
+        <div class="pm-block-footer pm-btn-block text-right">
+          <button routerLink="/projects" class="btn btn-sm pm-error-btn">
+            Cancel
+          </button>
+          <button class="btn btn-sm pm-success-btn" type="submit">
+            Create project
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

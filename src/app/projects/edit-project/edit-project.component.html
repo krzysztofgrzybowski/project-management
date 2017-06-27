@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-12">
     <div class="pm-block blue">
-      <form (ngSubmit)="onCreateSubmit()" #f="ngForm">
+      <form (ngSubmit)="onUpdateSubmit()" #f="ngForm">
         <div class="pm-block-header">
-          Create new project
+          Edit existing project
         </div>
         <div class="pm-block-content">
           <div class="alert pm-alert pm-alert-danger" [hidden]="!hasErrors">
@@ -21,7 +21,7 @@
                      type="name"
                      required
                      name='name'
-                     [(ngModel)]="newProject.name" />
+                     [(ngModel)]="editProject.name" />
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
             Cancel
           </button>
           <button class="btn btn-sm pm-success-btn" type="submit">
-            Create project
+            Update project
           </button>
         </div>
       </form>

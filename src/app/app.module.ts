@@ -16,6 +16,8 @@ import { ProjectsListComponent } from './projects/projects-list/projects-list.co
 import { ProjectService } from './services/project.service';
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { KeysPipe } from './pipes/keys.pipe';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { KeysPipe } from './pipes/keys.pipe';
     RegisterComponent,
     ProjectsListComponent,
     NewProjectComponent,
-    KeysPipe
+    KeysPipe,
+    EditProjectComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

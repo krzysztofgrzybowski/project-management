@@ -4,6 +4,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
 import { NewProjectComponent } from './projects/new-project/new-project.component';
+import { ProjectComponent } from './projects/project/project.component';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,14 @@ const routes: Routes = [
           {
             path: 'new',
             component: NewProjectComponent
+          },
+          {
+            path: ':id',
+            component: ProjectComponent
+          },
+          {
+            path: ':id/edit',
+            component: EditProjectComponent
           }
         ]
       }

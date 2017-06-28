@@ -21,12 +21,12 @@ export class ProjectService {
     return this.tokenService.get('projects/'+projectId).map(res => res.json());
   }
 
-  createProject(project) {
+  createProject(project: Project) {
     return this.tokenService.post('projects', project).map(res => res.json());
   }
 
-  updateProject(project) {
-    return this.tokenService.patch('projects/'+project.id, project).map(res => res.json());
+  updateProject(project: Project) {
+    return this.tokenService.put('projects/'+project.id, project).map(res => res.json());
   }
 
 }

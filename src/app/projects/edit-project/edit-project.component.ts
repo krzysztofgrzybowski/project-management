@@ -28,14 +28,24 @@ export class EditProjectComponent implements OnInit {
   ngOnInit() {
     this.editProject = this._projectService.getProject(this.projectId).subscribe(
       res => {
-        this.editProject = res;
+        this.editProject.id = res.id;
+        this.editProject.name = res.name;
       }
     );
-    console.log(this.editProject);
   }
 
   onUpdateSubmit() {
-
+    var tmp = this.editProject;
+    this.editProject = this._projectService.updateProject(this.editProject).subscribe(
+      res => {
+        this.router.navigate(['/projects', this.projectId]);
+      },
+      error => {
+        this.hasErrors = true;
+        this.errorMsgArray = error.json()["errors"];
+        this.editProject = tmp;
+      }
+    );
   }
 
 }

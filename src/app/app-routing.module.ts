@@ -6,6 +6,7 @@ import { ProjectsListComponent } from './projects/projects-list/projects-list.co
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { ProjectComponent } from './projects/project/project.component';
 import { EditProjectComponent } from './projects/edit-project/edit-project.component';
+import { TeamComponent } from './teams/team/team.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
           {
             path: ':id/edit',
             component: EditProjectComponent
+          },
+          {
+            path: ':id/team',
+            component: TeamComponent
           }
         ]
       }

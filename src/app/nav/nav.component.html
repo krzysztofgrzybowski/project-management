@@ -24,16 +24,16 @@
     <li (click)="logOutUser()">Log out</li>
   </ul>
   <ul *ngIf="projectId">
-    <li class="navigation-header">
+    <li [routerLink]="['/projects', projectId]" class="navigation-header">
       Project
     </li>
     <li>
       Tasks
     </li>
-    <li>
+    <li [routerLink]="['/projects', projectId, 'team']">
       Team
     </li>
-    <li routerLink="''/projects/'+projectId+'edit'">
+    <li [routerLink]="['/projects', projectId, 'edit']">
       Settings
     </li>
   </ul>

@@ -18,6 +18,8 @@ import { NewProjectComponent } from './projects/new-project/new-project.componen
 import { KeysPipe } from './pipes/keys.pipe';
 import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 import { ProjectComponent } from './projects/project/project.component';
+import { TeamComponent } from './teams/team/team.component';
+import { AddTeamMemberComponent } from './teams/add-team-member/add-team-member.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ProjectComponent } from './projects/project/project.component';
     NewProjectComponent,
     KeysPipe,
     EditProjectComponent,
-    ProjectComponent
+    ProjectComponent,
+    TeamComponent,
+    AddTeamMemberComponent
   ],
   imports: [
     BrowserModule,

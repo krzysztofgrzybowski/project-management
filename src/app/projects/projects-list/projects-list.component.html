@@ -21,6 +21,11 @@
             <hr *ngIf="!last" />
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12 text-center" *ngIf="projectsList?.length == 0">
+            You don't own any projects
+          </div>
+        </div>
       </div>
       <div class="pm-block-footer text-right">
         <a routerLink="/projects/new" class="btn btn-sm pm-success-btn">

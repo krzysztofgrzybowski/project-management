@@ -40,7 +40,7 @@ export class AddTeamMemberComponent implements OnInit {
         this.newMemberEmail = '';
         this.newMemberRole = 1;
         this.hasErrors = false;
-        this.teamMembersListReference.updateTeamMemberssList();
+        this.teamMembersListReference.updateTeamMembersList();
       },
       error => {
         this.hasErrors = true;

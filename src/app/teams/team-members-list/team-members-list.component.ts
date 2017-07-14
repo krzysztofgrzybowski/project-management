@@ -12,6 +12,8 @@ export class TeamMembersListComponent implements OnInit {
 
   projectId: number;
   teamMembersList: User[];
+  roles = ["admin", "member", "watcher"];
+
 
   constructor(
     private _projectService: ProjectService,
@@ -19,16 +21,24 @@ export class TeamMembersListComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.projectId = this.route.snapshot.params['id']
-    this.updateTeamMemberssList();
+    this.updateTeamMembersList();
   }
 
   ngOnInit() {
   }
 
-  updateTeamMemberssList() {
+  updateTeamMembersList() {
     this._projectService.getTeamMembers(this.projectId).subscribe(
       res => {
         this.teamMembersList = res;
+      }
+    )
+  }
+
+  removeTeamMemberFromProject(projectAssignmentId: number) {
+    this._projectService.removeTeamMemberFromProject(projectAssignmentId).subscribe(
+      res => {
+        this.updateTeamMembersList();
       }
     )
   }

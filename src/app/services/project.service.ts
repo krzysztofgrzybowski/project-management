@@ -29,6 +29,10 @@ export class ProjectService {
     return this.tokenService.put('projects/'+project.id, project).map(res => res.json());
   }
 
+  removeTeamMemberFromProject(project_assignment_id: number) {
+    return this.tokenService.delete('project_assignments/'+project_assignment_id).map(res => res.json());
+  }
+
   addTeamMemberToProject(email: string, project_id: number, role: number) {
     return this.tokenService.post('project_assignments', {
       email: email,

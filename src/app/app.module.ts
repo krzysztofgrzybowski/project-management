@@ -20,6 +20,7 @@ import { EditProjectComponent } from './projects/edit-project/edit-project.compo
 import { ProjectComponent } from './projects/project/project.component';
 import { TeamComponent } from './teams/team/team.component';
 import { AddTeamMemberComponent } from './teams/add-team-member/add-team-member.component';
+import { TeamMembersListComponent } from './teams/team-members-list/team-members-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AddTeamMemberComponent } from './teams/add-team-member/add-team-member.
     EditProjectComponent,
     ProjectComponent,
     TeamComponent,
-    AddTeamMemberComponent
+    AddTeamMemberComponent,
+    TeamMembersListComponent
   ],
   imports: [
     BrowserModule,

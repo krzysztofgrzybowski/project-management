@@ -1,0 +1,23 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="pm-block blue">
+      <div class="pm-block-header">
+        Team members
+      </div>
+      <div class="pm-block-content">
+        <div class="row" *ngFor="let teamMember of teamMembersList; let last = last">
+          <div class="col-8">
+            <a>
+              {{ teamMember.email }}
+            </a>
+          </div>
+          <div class="col-4 text-right">
+            links
+          </div>
+          <div class="col-12">
+            <hr *ngIf="!last" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

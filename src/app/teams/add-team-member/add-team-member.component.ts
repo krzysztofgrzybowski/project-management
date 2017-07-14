@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../services/project.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Input } from '@angular/core';
+import { TeamMembersListComponent } from '../team-members-list/team-members-list.component';
 
 @Component({
   selector: 'app-add-team-member',
@@ -9,10 +11,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class AddTeamMemberComponent implements OnInit {
 
+  @Input() teamMembersListReference: TeamMembersListComponent;
   newMemberEmail: string;
+  newMemberRole: number = 0;
   projectId: number;
   hasErrors: boolean;
   errorMsgArray: string[];
+  roles = [
+   { id: 0, name: "admin" },
+   { id: 1, name: "member" },
+   { id: 2, name: "watcher" }
+  ];
 
   constructor(
     private _projectService: ProjectService,
@@ -26,10 +35,12 @@ export class AddTeamMemberComponent implements OnInit {
   }
 
   onAddSubmit() {
-    this._projectService.addMemberToProject(this.newMemberEmail, this.projectId, 0).subscribe(
+    this._projectService.addTeamMemberToProject(this.newMemberEmail, this.projectId, this.newMemberRole).subscribe(
       res => {
         this.newMemberEmail = '';
+        this.newMemberRole = 1;
         this.hasErrors = false;
+        this.teamMembersListReference.updateTeamMemberssList();
       },
       error => {
         this.hasErrors = true;

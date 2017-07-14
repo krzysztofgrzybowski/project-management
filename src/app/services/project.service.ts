@@ -29,12 +29,16 @@ export class ProjectService {
     return this.tokenService.put('projects/'+project.id, project).map(res => res.json());
   }
 
-  addMemberToProject(email: string, project_id: number, role: number) {
+  addTeamMemberToProject(email: string, project_id: number, role: number) {
     return this.tokenService.post('project_assignments', {
       email: email,
       project_id: project_id,
       role: role
     }).map(res => res.json());
+  }
+
+  getTeamMembers(projectId: Number) {
+    return this.tokenService.get('projects/'+projectId+'/team_members').map(res => res.json());
   }
 
 }

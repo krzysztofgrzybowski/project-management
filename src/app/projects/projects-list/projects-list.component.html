@@ -38,7 +38,29 @@
     <div class="pm-block blue">
       <div class="pm-block-header">Projects assigned to you</div>
       <div class="pm-block-content">
-        (TO DO) Assigned projects list
+        <div class="row" *ngFor="let project of assignedProjectsList; let last = last">
+          <div class="col-8">
+            <a [routerLink]="['/projects/', project.id]">
+              {{ project.name }}
+            </a>
+          </div>
+          <div class="col-4 text-right">
+            <a [routerLink]="['/projects/', project.id, 'edit']" class="project-list-link">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </a>
+            <a [routerLink]="['/projects/', project.id]" class="project-list-link">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-12">
+            <hr *ngIf="!last" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center" *ngIf="projectsList?.length == 0">
+            You don't have any assigned projects
+          </div>
+        </div>
       </div>
     </div>
   </div>

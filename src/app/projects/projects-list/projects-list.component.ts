@@ -9,6 +9,7 @@ import { Project, ProjectService } from '../../services/project.service';
 export class ProjectsListComponent implements OnInit {
 
   projectsList: Project[];
+  assignedProjectsList: Project[];
 
   constructor(private _projectService: ProjectService) {
     this.updateProjectsList();
@@ -21,6 +22,11 @@ export class ProjectsListComponent implements OnInit {
     this._projectService.getProjects().subscribe(
       res => {
         this.projectsList = res;
+      }
+    )
+    this._projectService.getAssignedProjects().subscribe(
+      res => {
+        this.assignedProjectsList = res;
       }
     )
   }

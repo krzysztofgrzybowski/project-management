@@ -17,6 +17,10 @@ export class ProjectService {
     return this.tokenService.get('projects').map(res => res.json());
   }
 
+  getAssignedProjects() {
+    return this.tokenService.get('projects/assigned').map(res => res.json());
+  }
+
   getProject(projectId: Number) {
     return this.tokenService.get('projects/'+projectId).map(res => res.json());
   }

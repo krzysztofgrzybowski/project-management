@@ -23,18 +23,5 @@
     <li>(TO DO) My account</li>
     <li (click)="logOutUser()">Log out</li>
   </ul>
-  <ul *ngIf="projectId">
-    <li [routerLink]="['/projects', projectId]" class="navigation-header">
-      Project
-    </li>
-    <li>
-      (TO DO) Tasks
-    </li>
-    <li [routerLink]="['/projects', projectId, 'team']">
-      Team
-    </li>
-    <li [routerLink]="['/projects', projectId, 'edit']">
-      (TO DO) Settings
-    </li>
-  </ul>
+  <app-project-nav></app-project-nav>
 </div>

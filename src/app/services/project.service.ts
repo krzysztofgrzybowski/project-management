@@ -49,4 +49,8 @@ export class ProjectService {
     return this.tokenService.get('projects/'+projectId+'/team_members').map(res => res.json());
   }
 
+  getAssignmentForProject(project_id: Number) {
+    return this.tokenService.get('project_assignments/for_project?project_id='+project_id).map(res => res.json());
+  }
+
 }

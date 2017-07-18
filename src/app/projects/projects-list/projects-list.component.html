@@ -45,7 +45,7 @@
             </a>
           </div>
           <div class="col-4 text-right">
-            <a [routerLink]="['/projects/', project.id, 'edit']" class="project-list-link">
+            <a *ngIf="project.role == 0" [routerLink]="['/projects/', project.id, 'edit']" class="project-list-link">
               <i class="fa fa-cog" aria-hidden="true"></i>
             </a>
             <a [routerLink]="['/projects/', project.id]" class="project-list-link">

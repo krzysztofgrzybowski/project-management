@@ -21,6 +21,7 @@ import { ProjectComponent } from './projects/project/project.component';
 import { TeamComponent } from './teams/team/team.component';
 import { AddTeamMemberComponent } from './teams/add-team-member/add-team-member.component';
 import { TeamMembersListComponent } from './teams/team-members-list/team-members-list.component';
+import { ProjectNavComponent } from './nav/project-nav/project-nav.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TeamMembersListComponent } from './teams/team-members-list/team-members
     ProjectComponent,
     TeamComponent,
     AddTeamMemberComponent,
-    TeamMembersListComponent
+    TeamMembersListComponent,
+    ProjectNavComponent
   ],
   imports: [
     BrowserModule,

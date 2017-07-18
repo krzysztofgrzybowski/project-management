@@ -1,0 +1,8 @@
+<ul *ngIf="projectId">
+  <li [routerLink]="['/projects', projectId]" class="navigation-header">
+    Project
+  </li>
+  <li *ngFor="let menuItem of getMenu()" [routerLink]="menuItem.routerLink">
+    {{ menuItem.name }}
+  </li>
+</ul>

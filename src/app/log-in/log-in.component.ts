@@ -29,6 +29,7 @@ export class LogInComponent implements OnInit {
           email: '',
           password: ''
         };
+        location.reload();
       },
       error => {
         this.hasErrors = true;

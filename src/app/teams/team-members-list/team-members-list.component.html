@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="pm-block blue">
+      <div class="pm-block-header">
+        Team members
+      </div>
+      <div class="pm-block-content">
+        <div class="row" *ngFor="let teamMember of teamMembersList; let last = last">
+          <div class="col-6">
+            <a>
+              {{ teamMember.email }}
+            </a>
+          </div>
+          <div class="col-2 text-center">
+            {{ roles[teamMember.role] }}
+          </div>
+          <div class="col-4 text-right">
+            <!-- <a [routerLink]="['/projects/']" class="team-members-list-link">
+              <i class="fa fa-cog" aria-hidden="true"></i>
+            </a> -->
+            <a href="javascript:void(0);" (click)="removeTeamMemberFromProject(teamMember.project_assignment_id)" class="team-members-list-link">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-12">
+            <hr *ngIf="!last" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center" *ngIf="teamMembersList?.length == 0">
+            This project has no members
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -16,31 +16,51 @@ a, button
 
 .pm-default-btn
   border-radius: 0px
-  background-color: #1b678b
-  box-shadow: 4px 4px 3px rgba(#000000, 0.5)
+  background-color: #3e88c9
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
   color: #ffffff
 
 .pm-success-btn
   border-radius: 0px
   background-color: #06d6a0
-  box-shadow: 4px 4px 3px rgba(#000000, 0.5)
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
   color: #ffffff
 
 .pm-warning-btn
   border-radius: 0px
   background-color: #ffd166
-  box-shadow: 4px 4px 3px rgba(#000000, 0.5)
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
   color: #ffffff
 
 .pm-error-btn
   border-radius: 0px
   background-color: #ef476f
-  box-shadow: 4px 4px 3px rgba(#000000, 0.5)
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
+  color: #ffffff
+
+.pm-default-btn:visited, .pm-success-btn:visited, .pm-warning-btn:visited, .pm-error-btn:visited
   color: #ffffff
 
 .pm-default-btn:hover, .pm-success-btn:hover, .pm-warning-btn:hover, .pm-error-btn:hover
   color: #ffffff
   box-shadow: 4px 4px 3px rgba(#000000, 0.5), inset 1px 1px 5px rgba(#000000, 0.1)
+
+.pm-default-btn:active, .pm-success-btn:active, .pm-warning-btn:active, .pm-error-btn:active
+  color: #ffffff
+
+.pm-btn-block
+  .btn
+    margin-right: 5px
+
+.pm-btn-block.text-right
+  .btn
+    margin-left: 5px
+    margin-right: 0px
+
+.pm-btn-block.text-left
+  .btn
+    margin-right: 5px
+    margin-left: 0px
 
 
 // form controls
@@ -72,11 +92,73 @@ a, button
 .pm-alert
   border-radius: 0px
   border-width: 0px
-  box-shadow: 4px 4px 3px rgba(#000000, 0.5)
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
 
   p
     margin-bottom: 5px
     margin-top: 5px
 
 .pm-alert-danger
-  background-color: #ef476f
+  background-color: #ee466e
+
+.pm-alert-info
+  background-color: #3e88c9
+  color: #ffffff
+
+
+// standard div block
+
+.pm-block
+  background-color: #ffffff
+  padding: 15px
+  box-shadow: 4px 4px 3px rgba(#000000, 0.3)
+  margin-bottom: 23px
+
+  .pm-block-header
+    border-left: solid 40px #ffffff
+    border-bottom: solid 2px #ffffff
+    font-size: 23px
+    padding-left: 13px
+    padding-right: 13px
+    padding-top: 8px
+    padding-bottom: 8px
+    margin-top: -15px
+    margin-left: -15px
+    margin-right: -15px
+    margin-bottom: 15px
+
+  .pm-block-footer
+    border-top: solid 2px #ffffff
+    font-size: 15px
+    padding-left: 13px
+    padding-right: 13px
+    padding-top: 10px
+    padding-bottom: 10px
+    margin-top: 15px
+    margin-left: -15px
+    margin-right: -15px
+    margin-bottom: -15px
+
+.pm-block.red
+  .pm-block-header
+    border-color: #ef476f
+  .pm-block-footer
+    border-color: #ef476f
+
+.pm-block.green
+  .pm-block-header
+    border-color: #06d6a0
+  .pm-block-footer
+    border-color: #06d6a0
+
+.pm-block.yellow
+  .pm-block-header
+    border-color: #ffd166
+  .pm-block-footer
+    border-color: #ffd166
+
+.pm-block.blue
+  .pm-block-header
+    border-color: #3e88c9
+  .pm-block-footer
+    border-color: #3e88c9

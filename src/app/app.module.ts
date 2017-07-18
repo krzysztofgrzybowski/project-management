@@ -12,6 +12,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { AuthComponent } from './auth/auth.component';
 import { RegisterComponent } from './register/register.component';
+import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
+import { ProjectService } from './services/project.service';
+import { NewProjectComponent } from './projects/new-project/new-project.component';
+import { KeysPipe } from './pipes/keys.pipe';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
+import { ProjectComponent } from './projects/project/project.component';
+import { TeamComponent } from './teams/team/team.component';
+import { AddTeamMemberComponent } from './teams/add-team-member/add-team-member.component';
+import { TeamMembersListComponent } from './teams/team-members-list/team-members-list.component';
+import { ProjectNavComponent } from './nav/project-nav/project-nav.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +32,16 @@ import { RegisterComponent } from './register/register.component';
     DashboardComponent,
     LogInComponent,
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProjectsListComponent,
+    NewProjectComponent,
+    KeysPipe,
+    EditProjectComponent,
+    ProjectComponent,
+    TeamComponent,
+    AddTeamMemberComponent,
+    TeamMembersListComponent,
+    ProjectNavComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +50,8 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule
   ],
   providers: [
-    Angular2TokenService
+    Angular2TokenService,
+    ProjectService
   ],
   bootstrap: [
     AppComponent
